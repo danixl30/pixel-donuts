@@ -40,6 +40,10 @@ export const DonutsProvider = (props: DonutsProviderProps) => {
 
     const remove = (id: number) => {
         setDonuts(donuts.filter((donut) => donut.id !== id))
+        Toast.fire({
+            icon: 'success',
+            title: 'Dona removida',
+        })
     }
 
     return (

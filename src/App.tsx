@@ -5,6 +5,7 @@ import { DonutsProvider } from './state/donuts/DonutsProvider'
 
 const MainPage = lazy(() => import('./pages/main/Main'))
 const LandingPage = lazy(() => import('./pages/landing/Landing'))
+const CartPage = lazy(() => import('./pages/cart/Cart'))
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                                     path="/landing"
                                     element={<LandingPage />}
                                 />
+                                <Route path="/cart" element={<CartPage />} />
                             </Routes>
                         </Layout>
                     </DonutsProvider>

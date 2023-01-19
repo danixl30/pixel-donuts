@@ -7,6 +7,8 @@ export const Header = () => {
 
     const goToLanding = () => navigation('/landing')
 
+    const gotToCart = () => navigation('/cart')
+
     const totalPrice = donutsState.donuts.reduce(
         (acc, donut) => acc + donut.price,
         0,
@@ -85,7 +87,10 @@ export const Header = () => {
                                     2,
                                 )} Bs.`}</span>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary">
+                                    <button
+                                        onClick={gotToCart}
+                                        className="btn btn-primary"
+                                    >
                                         Ir a caja
                                     </button>
                                 </div>
