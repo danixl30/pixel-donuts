@@ -3,6 +3,7 @@ import cn from 'classnames'
 
 export type ProductModalProps = Donut & {
     onClose: () => void
+    onBuy: () => void
 }
 
 export const ProductModal = (props: ProductModalProps) => {
@@ -26,12 +27,14 @@ export const ProductModal = (props: ProductModalProps) => {
                         Precio: Bs{' '}
                         <span className="font-bold">{props.price}</span>
                     </p>
-                    <div className="alert alert-error shadow-lg">
+                    <div className="alert alert-info shadow-lg">
                         <div>
-                            <span className="text-3xl">😥</span>
-                            <span>
-                                Actualmente la tienda se encuentra cerrada
-                            </span>
+                            <button
+                                className="btn btn-primary"
+                                onClick={props.onBuy}
+                            >
+                                Aniadir al carrito
+                            </button>
                         </div>
                     </div>
                     <div className="modal-action" onClick={props.onClose}>

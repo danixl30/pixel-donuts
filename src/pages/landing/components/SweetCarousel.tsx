@@ -1,4 +1,8 @@
+import { products } from '../../../common/products'
+import { getDonutsContext } from '../../../state/donuts/DonutsProvider'
+
 export type Sweet = {
+    id: number
     name: string
     price: string
     description: string
@@ -20,6 +24,16 @@ const calculateIndexPrev = (lenght: number, current: number) => {
 }
 
 export const SweetCarousel = (props: CarouselProps) => {
+    const donutsState = getDonutsContext()
+
+    const selectObtain = (id: number) => {
+        const donut = products.find((e) => e.id === id)
+        if (!donut) {
+            return
+        }
+        donutsState.add(donut)
+    }
+
     return (
         <>
             <section className="store bg-white py-8" x-data="products">
@@ -47,7 +61,12 @@ export const SweetCarousel = (props: CarouselProps) => {
                                         <p className="py-6">
                                             {sweet.description}
                                         </p>
-                                        <button className="btn btn-primary">{`Obtener por ${sweet.price}`}</button>
+                                        <button
+                                            onClick={() =>
+                                                selectObtain(sweet.id)
+                                            }
+                                            className="btn btn-primary"
+                                        >{`Obtener por ${sweet.price}`}</button>
                                     </div>
                                 </div>
                                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

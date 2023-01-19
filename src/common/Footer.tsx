@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
     return (
@@ -12,7 +12,7 @@ export const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Compañía</span>
-                    <Link to='/landing'>
+                    <Link to="/landing">
                         <a className="link link-hover">Sobre nosotros</a>
                     </Link>
                     <a className="link link-hover">Contactos</a>
@@ -29,7 +29,7 @@ export const Footer = () => {
             </footer>
             <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
                 <div className="items-center grid-flow-col">
-                    <Link to='/'>
+                    <Link to="/">
                         <span className="text-5xl font-extrabold">
                             Pixel Donuts
                         </span>

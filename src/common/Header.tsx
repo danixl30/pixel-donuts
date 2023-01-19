@@ -1,9 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { getDonutsContext } from '../state/donuts/DonutsProvider'
 
 export const Header = () => {
     const navigation = useNavigate()
+    const donutsState = getDonutsContext()
 
     const goToLanding = () => navigation('/landing')
+
+    const totalPrice = donutsState.donuts.reduce(
+        (acc, donut) => acc + donut.price,
+        0,
+    )
 
     return (
         <>
@@ -72,9 +79,11 @@ export const Header = () => {
                         >
                             <div className="card-body">
                                 <span className="font-bold text-lg">
-                                    Productos: 0
+                                    {`Productos: ${donutsState.donuts.length}`}
                                 </span>
-                                <span className="text">A pagar: 0.0 Bs</span>
+                                <span className="text">{`Total a pagar: ${totalPrice.toFixed(
+                                    2,
+                                )} Bs.`}</span>
                                 <div className="card-actions">
                                     <button className="btn btn-primary">
                                         Ir a caja
