@@ -5,8 +5,6 @@ export const Header = () => {
     const navigation = useNavigate()
     const donutsState = getDonutsContext()
 
-    const goToLanding = () => navigation('/landing')
-
     const gotToCart = () => navigation('/cart')
 
     const totalPrice = donutsState.donuts.reduce(
@@ -26,9 +24,7 @@ export const Header = () => {
                     <button className="btn btn-ghost">Productos</button>
                     <button className="btn btn-ghost">Sucursales</button>
                     <button className="btn btn-ghost">Delivery</button>
-                    <button onClick={goToLanding} className="btn btn-ghost">
-                        ¿Quienes somos?
-                    </button>
+                    <button className="btn btn-ghost">¿Quienes somos?</button>
                     <button className="btn btn-ghost">Contacto</button>
                 </div>
                 <div className="flex-none gap-2">

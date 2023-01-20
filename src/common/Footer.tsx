@@ -6,15 +6,16 @@ export const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <span className="footer-title">Menú</span>
-                    <a className="link link-hover">Donas</a>
+                    <Link to="/main">
+                        <a className="link link-hover">Donas</a>
+                    </Link>
+
                     <a className="link link-hover">Desayunos</a>
                     <a className="link link-hover">Bebidas</a>
                 </div>
                 <div>
                     <span className="footer-title">Compañía</span>
-                    <Link to="/landing">
-                        <a className="link link-hover">Sobre nosotros</a>
-                    </Link>
+                    <a className="link link-hover">Sobre nosotros</a>
                     <a className="link link-hover">Contactos</a>
                     <a className="link link-hover">Trabaja con Nosotros</a>
                 </div>

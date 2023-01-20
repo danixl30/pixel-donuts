@@ -15,11 +15,8 @@ function App() {
                     <DonutsProvider>
                         <Layout>
                             <Routes>
-                                <Route path="/" element={<MainPage />} />
-                                <Route
-                                    path="/landing"
-                                    element={<LandingPage />}
-                                />
+                                <Route path="/" element={<LandingPage />} />
+                                <Route path="/main" element={<MainPage />} />
                                 <Route path="/cart" element={<CartPage />} />
                             </Routes>
                         </Layout>

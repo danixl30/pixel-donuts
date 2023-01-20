@@ -33,12 +33,12 @@ export const ProductModal = (props: ProductModalProps) => {
                                 className="btn btn-primary"
                                 onClick={props.onBuy}
                             >
-                                Aniadir al carrito
+                                Añadir al carrito
                             </button>
                         </div>
                     </div>
                     <div className="modal-action" onClick={props.onClose}>
-                        <label className="btn">Yay!</label>
+                        <label className="btn">Volver</label>
                     </div>
                 </div>
             </div>

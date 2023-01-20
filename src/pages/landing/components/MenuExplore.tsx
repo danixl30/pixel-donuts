@@ -1,4 +1,9 @@
+import { Link, useNavigate } from 'react-router-dom'
+
 export const MenuExplore = () => {
+    const navigation = useNavigate()
+
+    const goToMain = () => navigation('/main')
     return (
         <>
             <div
@@ -19,7 +24,10 @@ export const MenuExplore = () => {
                                 Las mejores donas se consiguen aquí
                             </p>
                             <div className="card-actions justify-end">
-                                <button className="mb-5 btn btn-accent">
+                                <button
+                                    onClick={goToMain}
+                                    className="mb-5 btn btn-accent"
+                                >
                                     Explorar Menú
                                 </button>
                             </div>
